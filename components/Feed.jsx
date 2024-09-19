@@ -35,11 +35,21 @@ const Feed = () => {
     const response = await fetch('/api/prompt')
     const data = await response.json();
     setAllPosts(data)
+    console.log(data)
   }
 
   useEffect(() => { 
     fetchPosts()
-   }, []);
+   
+    
+    // Optional: Polling for updates every 30 seconds (adjust as needed)
+    const interval = setInterval(() => {
+      fetchPosts();
+    }, 30000); // Fetch every 30 seconds
+
+    return () => clearInterval(interval); 
+  
+  }, []);
    
 
 
