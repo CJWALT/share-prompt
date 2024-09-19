@@ -71,7 +71,7 @@ const UpdatePrompt = () => {
   )
 }
 
-export default function UpdatePrompt() {  
+export default function UpdatePromptPage() {  
     return (
         <Suspense fallback={<div>Loading...</div>}>
           <UpdatePrompt />
