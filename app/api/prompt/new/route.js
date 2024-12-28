@@ -16,8 +16,8 @@ export const POST = async (req) =>{
 
         await newPrompt.save();
 
-        await res.revalidate('/feed');
-        
+        // await res.revalidate('/feed');
+
         return new Response(JSON.stringify(newPrompt), { 
             status: 201 })
     } catch(err){ 
