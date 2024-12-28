@@ -41,7 +41,7 @@ const Feed = () => {
   useEffect(() => { 
     fetchPosts()
   
-  }, []);
+  }, [allPosts]);
    
 
 
