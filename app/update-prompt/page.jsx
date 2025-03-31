@@ -28,7 +28,13 @@ const UpdatePrompt = () => {
             })
         }
 
+        if(response?.ok){ 
+            router.refresh();
+        }
+
         if(promptId) getPromptDetails()
+
+            
     }, [promptId])
 
 
@@ -49,6 +55,7 @@ const UpdatePrompt = () => {
 
             if(response.ok){
                 router.push('/'); 
+                router.refresh()
 
             }
         }

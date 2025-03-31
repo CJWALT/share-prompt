@@ -8,6 +8,8 @@ import Form from '@components/Form'
 
 import React from 'react'
 
+
+
 const CreatePrompt = () => {
     const router = useRouter();
     const {data: session } = useSession();  
@@ -16,6 +18,12 @@ const CreatePrompt = () => {
         prompt: '', 
         tag:'',
     });
+
+    
+
+    useEffect(()=>{
+        router.refresh();
+    }, [])
 
     const createPrompt = async (e)=>{ 
         e.preventDefault();
@@ -31,6 +39,7 @@ const CreatePrompt = () => {
                 })
                 if(response.ok){ 
                     router.push('/')
+                    router.refresh()
                 }
         } catch(err){ 
                 console.log(err)
